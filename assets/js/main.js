@@ -345,35 +345,5 @@ applyLang("es");
 // - Default: uses mailto fallback (no backend)
 // - If you want: Formspree / Netlify Forms (instructions below)
 // =============================
-const contactForm = document.getElementById("contactForm");
-const formHint = document.getElementById("formHint");
 
-contactForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
 
-  const data = new FormData(contactForm);
-  const name = encodeURIComponent(data.get("name") || "");
-  const phone = encodeURIComponent(data.get("phone") || "");
-  const email = encodeURIComponent(data.get("email") || "");
-  const city = encodeURIComponent(data.get("city") || "");
-  const interest = encodeURIComponent(data.get("interest") || "");
-  const message = encodeURIComponent(data.get("message") || "");
-
-  const subject = encodeURIComponent("Contacto desde ARQA-GRUPO INMOBILIARIO");
-  const body = encodeURIComponent(
-    `Nombre: ${decodeURIComponent(name)}\n` +
-    `Teléfono: ${decodeURIComponent(phone)}\n` +
-    `Correo: ${decodeURIComponent(email)}\n` +
-    `Ciudad: ${decodeURIComponent(city)}\n` +
-    `Interés: ${decodeURIComponent(interest)}\n\n` +
-    `Mensaje:\n${decodeURIComponent(message)}\n`
-  );
-
-  // Mailto fallback (simple and works on most devices)
-  const to = "contacto@arqagrupoinmobiliario.com.ec";
-  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-
-  formHint.textContent = (currentLang === "es")
-    ? "Se abrió su correo para enviar el mensaje. Si no se abre, escríbanos por WhatsApp."
-    : "Your email client was opened to send the message. If it doesn’t open, message us on WhatsApp.";
-});
