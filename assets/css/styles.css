@@ -38,7 +38,7 @@ img{max-width:100%; display:block}
 @media (max-width: 960px){
   .grid--4{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media (max-width: 680px){
+@media (max-width: 768px){
   .grid--2,.grid--4{grid-template-columns:1fr}
   .section{padding:54px 0}
 }
@@ -552,11 +552,6 @@ border-radius: 2px;
     padding: 20px;
   }
 
-  .card img {
-    width: 120px;
-    height: 120px;
-  }
-
   .section__title {
     font-size: 28px;
     text-align: center;
@@ -567,4 +562,15 @@ border-radius: 2px;
     text-align: center;
   }
 
+}
+.firma-card{
+  text-align: center;
+  padding: 20px;
+}
+.firma-card img{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
