@@ -539,3 +539,32 @@ border-radius: 2px;
     border-radius: 12px 12px 0 0;
     margin-bottom: 15px;
 }
+@media (max-width: 768px) {
+
+  .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .section__title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .section__lead {
+    font-size: 16px;
+    text-align: center;
+  }
+
+}
